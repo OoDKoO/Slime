@@ -32,8 +32,7 @@ public class Food extends Item implements ActionListener{
 						foodButton.setBorderPainted(false);
 						
 						foodFreeMove = new FreeMove(foodButton);
-						ActionListener Food = null;
-						foodButton.addActionListener(Food);
+						foodButton.addActionListener(Food.this);
 						
 						icon.setIcon("src/food.png", foodButton);
 						background.add(foodButton);	
