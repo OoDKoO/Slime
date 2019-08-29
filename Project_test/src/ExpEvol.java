@@ -18,16 +18,16 @@ public class ExpEvol {
 	// public boolean evolve = false;
 
 	public void evol(JButton slime) {
-		BGM levelUp=new BGM("src/levelUpSoundEffect.wav");
+		BGM levelUp=new BGM("src/Music/levelUpSoundEffect.wav");
 
 		this.slime = slime;
 		if (exp % 10 == 0) {
 			if (exp < 50) {
 				levelUp.start();
-				setIcon("src/Slime" + exp / 10 + ".png", slime);
+				setIcon("src/Images/Slime" + exp / 10 + ".png", slime);
 				slime.setSize(80 + exp / 10 * 20, 80 + exp / 10 * 20);
 			} else if (exp >= 50)
-				setIcon("src/Slime4.png", slime);
+				setIcon("src/Images/Slime4.png", slime);
 		}
 	}
 

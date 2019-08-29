@@ -16,14 +16,14 @@ public class Project_test extends JFrame implements ActionListener {
 
 	}
 
-	static BGM bgm = new BGM("src/BackGroundMusic.wav");
+	static BGM bgm = new BGM("src/Music/BackGroundMusic.wav");
 	static JLabel title=new JLabel("Mutanat Slime");
 
 	static JFrame zoo = new JFrame();
 	static JButton startButton = new JButton("Start");
 	static JPanel background = new JPanel() {
 		public void paintComponent(Graphics g) {
-			ImageIcon icon = new ImageIcon("src/background.jpg");
+			ImageIcon icon = new ImageIcon("src/Images/background.jpg");
 			g.drawImage(icon.getImage(), 0, 0, this.getSize().width, this.getSize().height, this);
 		}
 	};
@@ -101,7 +101,7 @@ public class Project_test extends JFrame implements ActionListener {
 		slime.setContentAreaFilled(false);
 		slime.setBorderPainted(false);
 		
-		setIcon("src/Slime0.png", slime);
+		setIcon("src/Images/Slime0.png", slime);
 		slime.setText("Slime");
 		
 		CreatureButtonListener slimelistener = new CreatureButtonListener(slime, createSlime);
@@ -126,7 +126,7 @@ public class Project_test extends JFrame implements ActionListener {
 						food.setContentAreaFilled(false);
 						food.setBorderPainted(false);
 						
-						setIcon("src/food.png", food);
+						setIcon("src/Images/food.png", food);
 						CreatureButtonListener foodlistener = new CreatureButtonListener(slime, createSlime, food,
 								createFood, background, label);
 						

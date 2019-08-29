@@ -11,7 +11,7 @@ public class EatMove implements Runnable {
 	private JButton food = new JButton();
 	private FreeMove createFood = new FreeMove(food);
 	private int exp;
-	private BGM eatSound = new BGM("src/eatingSoundEffect.wav");
+	private BGM eatSound = new BGM("src/Music/eatingSoundEffect.wav");
 
 	public EatMove(JButton creature, FreeMove createCreature, JButton food, FreeMove createFood, int exp) {
 		this.createCreature = createCreature;
@@ -28,9 +28,9 @@ public class EatMove implements Runnable {
 		int ydir = (pf.y - pc.y) / 10;
 		
 		if (exp < 5)
-			setIcon("src/Slime" + exp + "Eat.png", creature);
+			setIcon("src/Images/Slime" + exp + "Eat.png", creature);
 		else
-			setIcon("src/Slime4Eat.png", creature);
+			setIcon("src/Images/Slime4Eat.png", creature);
 		
 		for (int i = 0; i < 10; i++) {
 			pc.x += xdir;
@@ -44,9 +44,9 @@ public class EatMove implements Runnable {
 		}
 		
 		if (exp < 5)
-			setIcon("src/Slime" + exp + ".png", creature);
+			setIcon("src/Images/Slime" + exp + ".png", creature);
 		else
-			setIcon("src/Slime4.png", creature);
+			setIcon("src/Images/Slime4.png", creature);
 		
 		eatSound.start();
 		createCreature.resume();
