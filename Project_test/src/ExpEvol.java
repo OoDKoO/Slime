@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class ExpEvol {
-	static int exp = 0;
+	private static int exp = 0;
 	JButton slime = new JButton();
 
 	public void expAdd() {
@@ -14,8 +14,6 @@ public class ExpEvol {
 	public int getExp() {
 		return exp;
 	}
-
-	// public boolean evolve = false;
 
 	public void evol(JButton slime) {
 		BGM levelUp=new BGM("src/Music/levelUpSoundEffect.wav");
@@ -33,8 +31,9 @@ public class ExpEvol {
 
 	public static void setIcon(String file, JButton iconButton) {
 		ImageIcon icon = new ImageIcon(file);
+		icon.getImage();
 		Image temp = icon.getImage().getScaledInstance(iconButton.getWidth(), iconButton.getHeight(),
-				icon.getImage().SCALE_AREA_AVERAGING);
+				Image.SCALE_AREA_AVERAGING);
 		icon = new ImageIcon(temp);
 		iconButton.setIcon(icon);
 	}

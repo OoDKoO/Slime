@@ -1,41 +1,34 @@
-import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class Project_test extends JFrame implements ActionListener {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		// Scanner keyin = new Scanner(System.in);
-
-		Project_test zoo = new Project_test();
-		zoo.setVisible(true);
-		zoo.setResizable(false);
-
-	}
-
-	static BGM bgm = new BGM("src/Music/BackGroundMusic.wav");
+	private static BGM bgm = new BGM("src/Music/BackGroundMusic.wav");
+	
 	static JLabel title=new JLabel("Mutanat Slime");
-
+	static JLabel label = new JLabel("EXP¡G0");
 	static JFrame zoo = new JFrame();
-	static JButton startButton = new JButton("Start");
 	static JPanel background = new JPanel() {
 		public void paintComponent(Graphics g) {
 			ImageIcon icon = new ImageIcon("src/Images/background.jpg");
 			g.drawImage(icon.getImage(), 0, 0, this.getSize().width, this.getSize().height, this);
 		}
 	};
-
-	static JLabel label = new JLabel("EXP¡G0");
-
+	static JButton startButton = new JButton("Start");
 	static JButton slime = new JButton();
-	static FreeMove createSlime = new FreeMove(slime);
 	static JButton food;
+	static FreeMove createSlime = new FreeMove(slime);
 	static FreeMove createFood;
 
 	static Setting gaming = new Setting();
+	
+	public static void main(String[] args) {
+
+		Project_test zoo = new Project_test();
+		zoo.setVisible(true);
+		zoo.setResizable(false);
+	}
 
 	public Project_test() {
 
@@ -89,8 +82,9 @@ public class Project_test extends JFrame implements ActionListener {
 	public static void setIcon(String file, JButton iconButton) {
 		
 		ImageIcon icon = new ImageIcon(file);
+		icon.getImage();
 		Image temp = icon.getImage().getScaledInstance(iconButton.getWidth(), iconButton.getHeight(),
-				icon.getImage().SCALE_AREA_AVERAGING);
+				Image.SCALE_AREA_AVERAGING);
 		icon = new ImageIcon(temp);
 		iconButton.setIcon(icon);
 	}

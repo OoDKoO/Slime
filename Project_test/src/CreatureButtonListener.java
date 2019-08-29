@@ -1,13 +1,13 @@
 import java.awt.event.*;
-import java.awt.*;
 import javax.swing.*;
 
 public class CreatureButtonListener implements ActionListener {
 
 	private JButton creature = new JButton();
-	private FreeMove createCreature = new FreeMove(creature);
 	private JButton food = new JButton();
+	private FreeMove createCreature = new FreeMove(creature);
 	private FreeMove createFood = new FreeMove(food);
+	
 	private JPanel panel = new JPanel();
 	private EatMove eatFood;
 	private JLabel label = new JLabel();
@@ -50,7 +50,7 @@ public class CreatureButtonListener implements ActionListener {
 		if (command.equals("Food")) {
 			expCal.expAdd();
 			label.setText("Exp¡G" + expCal.getExp());
-			eatFood = new EatMove(creature, createCreature, food, createFood, (int) (expCal.getExp() / 10));
+			eatFood = new EatMove(creature, createCreature, food, (int) (expCal.getExp() / 10));
 			createFood.suspend();
 			createCreature.suspend();
 			eatFood.start();

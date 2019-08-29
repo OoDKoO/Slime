@@ -9,14 +9,12 @@ public class EatMove implements Runnable {
 	private JButton creature = new JButton();
 	private FreeMove createCreature = new FreeMove(creature);
 	private JButton food = new JButton();
-	private FreeMove createFood = new FreeMove(food);
 	private int exp;
 	private BGM eatSound = new BGM("src/Music/eatingSoundEffect.wav");
 
-	public EatMove(JButton creature, FreeMove createCreature, JButton food, FreeMove createFood, int exp) {
+	public EatMove(JButton creature, FreeMove createCreature, JButton food, int exp) {
 		this.createCreature = createCreature;
 		this.creature = creature;
-		this.createFood = createFood;
 		this.food = food;
 		this.exp = exp;
 	}
@@ -61,8 +59,9 @@ public class EatMove implements Runnable {
 
 	public static void setIcon(String file, JButton iconButton) {
 		ImageIcon icon = new ImageIcon(file);
+		icon.getImage();
 		Image temp = icon.getImage().getScaledInstance(iconButton.getWidth(), iconButton.getHeight(),
-				icon.getImage().SCALE_AREA_AVERAGING);
+				Image.SCALE_AREA_AVERAGING);
 		icon = new ImageIcon(temp);
 		iconButton.setIcon(icon);
 	}
