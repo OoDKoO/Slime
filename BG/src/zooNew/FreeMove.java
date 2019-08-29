@@ -8,7 +8,6 @@ public class FreeMove implements Runnable {
 	public Thread t;
 	private JButton creature;
 	boolean suspended = false;
-	boolean ate = false;
 
 	public FreeMove(JButton creature) {
 		this.creature = creature;

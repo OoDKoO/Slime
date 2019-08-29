@@ -6,36 +6,40 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class Slime extends Item implements ActionListener{
-	
+public class Slime extends Item implements ActionListener {
+
 	private FreeMove slimeFreeMove;
-	
+	private JButton slimeButton;
+	Food food = new Food();
+
 	public void createItem(JPanel background) {
-		
-		JButton slimeButton = new JButton("Slime");
-		
+
+		slimeButton = new JButton("Slime");
+
 		slimeButton.setSize(80, 80);
 		slimeButton.setContentAreaFilled(false);
 		slimeButton.setBorderPainted(false);
-		
+
 		icon.setIcon("src/Slime0.png", slimeButton);
-		//slimeButton.setText("Slime");
-		
+
+		food.connect(slimeButton, slimeFreeMove);
+
 		slimeFreeMove = new FreeMove(slimeButton);
 		slimeButton.addActionListener(this);
-		
+
 		background.add(slimeButton);
-		
+
 		slimeFreeMove.start();
 
 	}
-	
+
 	public void actionPerformed(ActionEvent e2) {
 		String command = e2.getActionCommand();
 
 		if (command.equals("Slime")) {
 			try {
-				synchronized (this) {
+				synchronized (this)
+				{
 					if (slimeFreeMove.suspended == false) {
 						slimeFreeMove.suspend();
 					} else {
